@@ -56,7 +56,7 @@ app.post("/packages/update-seats", async (req, res) => {
 
 app.get("/bookings/:packageId", (req, res) => {
   try {
-    const packageId = req.params.packageId;
+    const packageId = parseInt(req.params.packageId);
     const response = getBookingByPackageId(packageId);
 
     return res.status(200).json({ bookings: response });
